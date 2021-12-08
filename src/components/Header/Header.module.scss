@@ -1,0 +1,11 @@
+.Header {
+  grid-area: header;
+  background: rebeccapurple;
+}
+  .logo {
+    object-fit: cover;
+    width: 100%;
+    max-width: 100px;
+    height: 100%;
+    display: block;
+  }
