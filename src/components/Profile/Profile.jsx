@@ -3,7 +3,7 @@ import MyPosts from "./MyPosts/MyPosts";
 const Profile = () => {
     return (
           <section className={classes.profile}>
-              Section
+               Страничка  Соц сети
               <MyPosts/>
           </section>
     );
