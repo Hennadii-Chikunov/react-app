@@ -1,5 +1,5 @@
 import classes from "./Profile.module.scss";
-import MyPosts from "./MyPosts/MyPosts";
+import { MyPosts } from "./MyPosts";
 const Profile = () => {
     return (
           <section className={classes.profile}>

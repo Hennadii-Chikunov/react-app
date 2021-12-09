@@ -1,11 +1,12 @@
 import image from '../../../../img/shield.jpg';
 import classes from "./Post.module.scss";
 
-const Post = () => {
+const Post = (props) => {
+
     return (
           <div className={classes.item}>
-              <img src={ image } alt=""/>
-              Post 1
+              <img src={ image } alt="image"/>
+              { props.message }
           </div>
     );
 }
