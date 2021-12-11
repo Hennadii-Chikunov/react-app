@@ -7,8 +7,8 @@ const MyPosts = () => {
               <textarea className={classes.textarea} name="" id="" cols="30" rows="10">
               </textarea>
               <Button text="Click me"/>
-              <Post message='Hi, How are you ?'/>
-              <Post message='Good and You ?'/>
+              <Post message='Hi, How are you ?' likes='1'/>
+              <Post message='Good and You ?' likes='31'/>
           </article>
     );
 }
