@@ -5,21 +5,27 @@ import { Sidebar } from "../Sidebar/Sidebar";
 import { Profile } from "../Profile/Profile";
 import { Footer } from "../Footer/Footer";
 import { Dialogs } from "../Dialogs";
-import { BrowserRouter, Route } from "react-router-dom";
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom";
 
 const App = () => {
    return (
-       <BrowserRouter>
+      <BrowserRouter>
                <div className="wrapper">
                    <Header />
                    <Sidebar />
                    <div className='wrapper__content'>
-                         <Route path='/profile' component={Profile}/>
-                         <Route path='/dialogs' component={Dialogs}/>
+						 <Routes>
+			                  <Route path="/profile" element={<Profile/>} />
+                               <Route path="/dialogs" element={<Dialogs/>} />
+                         </Routes>
                    </div>
                    <Footer />
                </div>
-       </BrowserRouter>
+      </BrowserRouter>
    );
 }
 
