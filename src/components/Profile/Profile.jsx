@@ -1,4 +1,4 @@
-import classes from "./Profile.module.scss";
+//import classes from "./Profile.module.scss";
 import { MyPosts } from "./MyPosts";
 const Profile = () => {
     return (

@@ -1,12 +1,20 @@
-.nav {
-    grid-area: nav;
-    background: black;
-    color: antiquewhite;
-}
+ aside {
+   display: flex;
+   justify-content: center;
+   align-self: flex-start;
+   background-color: black;
+   width: 100%;
    .item {
-     list-style: none;
+     list-style-type: none;
+     &:not(:last-child) {
+       padding-bottom: 10px;
+     }
    }
-   .item.active {
-     color: gold;
+   .nav {
+     grid-area: nav;
+     background: black;
+     color: antiquewhite;
    }
+ }
+
 

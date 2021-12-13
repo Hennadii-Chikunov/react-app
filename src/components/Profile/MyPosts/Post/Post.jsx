@@ -5,7 +5,9 @@ const Post = (props) => {
 
     return (
           <div className={classes.item}>
-              <img src={ image } alt="image"/>
+              <picture>
+                  <img src={ image } alt="image"/>
+              </picture>
               { props.message }
               <span>Like</span> { props.likes }
           </div>
