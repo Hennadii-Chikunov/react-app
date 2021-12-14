@@ -1,9 +1,12 @@
-//import classes from "./Profile.module.scss";
+import classes from "./Profile.module.scss";
 import { MyPosts } from "./MyPosts";
+import {ProfileInfo} from "./ProfileInfo";
+
 const Profile = () => {
     return (
           <section>
-               Страничка  Соц сети на React(е) 12347
+              <h2 className={classes.title}>Page of my start REACT project</h2>
+              <ProfileInfo/>
               <MyPosts/>
           </section>
     );
