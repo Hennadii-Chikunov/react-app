@@ -17,21 +17,33 @@ const Message = (props) => {
     )
 }
 
+
+
 const Dialogs = () => {
+
+    let dialogs = [
+        {id:1, name: 'Gera'},
+        {id:2, name: 'Volt'},
+        {id:3, name: 'Ell'},
+        {id:4, name: 'Kit'},
+        {id:5, name: 'Fill'}
+    ]
+
+    let messages = [
+        {id:1, message: 'Hi, Gera'},
+        {id:2, message: "What's up"},
+        {id:3, message: "Good, i crazy love strawberry"}
+    ]
+
+    let dialogsElements = dialogs.map( dialog => <DialogItem name={dialog.name} id={dialog.id} /> );
+    let messagesElements = messages.map( message => <Message message={message.message} /> );
     return (
         <section className={classes.dialogs}>
             <div className={classes.dialogsItems}>
-                    <DialogItem name='Герыч' id='Gera'/>
-                    <DialogItem name='Элл' id='Ell'/>
-                    <DialogItem name='Вольт' id='Volt'/>
-                    <DialogItem name='Филин' id='Fill'/>
-                    <DialogItem name='Никитос' id='Kit'/>
+                { dialogsElements }
             </div>
             <div className={classes.messages}>
-               <Message message='Hi, Gera'/>
-                <Message message="What's up"/>
-                <Message message="Good, i crazy love strawberry"/>
-                <Message message='Yeah, I eat meat, I am not a vegetarian'/>
+                { messagesElements }
             </div>
         </section>
     );
