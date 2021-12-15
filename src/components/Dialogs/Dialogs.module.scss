@@ -11,6 +11,9 @@
     color: green;
     cursor: pointer;
     line-height: 150%;
+    &:not(:last-child) {
+      padding-bottom: 10px;
+    }
     &.active {
       border: solid 2px goldenrod;
       display: flex;
@@ -24,7 +27,7 @@
     flex-direction: column;
     .message {
       &:not(:last-child) {
-        padding-bottom: 15px;
+        padding-bottom: 20px;
       }
     }
   }
