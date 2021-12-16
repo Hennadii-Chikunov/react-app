@@ -1,13 +1,14 @@
-import classes from "./Profile.module.scss";
+import styles from "./Profile.module.scss";
 import { MyPosts } from "./MyPosts";
 import {ProfileInfo} from "./ProfileInfo";
 
-const Profile = () => {
+const Profile = (props) => {
+
     return (
           <section>
-              <h2 className={classes.title}>Page of my start REACT project</h2>
+              <h2 className={styles.title}>Page of my start REACT project</h2>
               <ProfileInfo/>
-              <MyPosts/>
+              <MyPosts postsData={props.postsData}/>
           </section>
     );
 }

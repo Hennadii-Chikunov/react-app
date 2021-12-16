@@ -11,7 +11,8 @@ import {
     Route
 } from "react-router-dom";
 
-const App = () => {
+const App = (props) => {
+
    return (
       <BrowserRouter>
                <div className="wrapper">
@@ -19,8 +20,8 @@ const App = () => {
                    <Sidebar />
                    <div className='wrapper__content'>
 						 <Routes>
-			                  <Route exact path="/profile" element={<Profile/>} />
-                               <Route exact path="/dialogs" element={<Dialogs/>} />
+			                  <Route exact path="/profile" element={<Profile postsData={props.postsData}/>} />
+                               <Route exact path="/dialogs" element={<Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>} />
                          </Routes>
                    </div>
                    <Footer />

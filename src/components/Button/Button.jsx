@@ -1,8 +1,8 @@
-import classes from "./Button.module.scss";
+import styles from "./Button.module.scss";
 
 const Button = (props) => {
     return (
-        <button className={classes.btn}>{ props.text }</button>
+        <button className={styles.btn}>{ props.text }</button>
     );
 }
 export { Button };
