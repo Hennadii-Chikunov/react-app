@@ -1,9 +1,9 @@
 import logo from '../../img/logo.jpg';
-import classes from './Header.module.scss';
+import styles from './Header.module.scss';
 
 const Header = () => (
-       <header className={classes.Header}>
-           <img className={classes.logo} src={logo} alt={"logo"}/>
+       <header className={styles.Header}>
+           <img className={styles.logo} src={logo} alt={"logo"}/>
        </header>
     );
 

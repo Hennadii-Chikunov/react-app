@@ -1,7 +1,7 @@
-import classes from "./Footer.module.scss";
+import styles from "./Footer.module.scss";
 
 const Footer = () => (
-        <footer className={classes.footer}>
+        <footer className={styles.footer}>
             подвал
         </footer>
 );
