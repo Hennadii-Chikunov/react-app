@@ -20,8 +20,10 @@ const App = (props) => {
                    <Sidebar />
                    <div className='wrapper__content'>
 						 <Routes>
-			                  <Route exact path="/profile" element={<Profile postsData={props.postsData}/>} />
-                               <Route exact path="/dialogs" element={<Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>} />
+			                  <Route exact path="/profile" element={<Profile
+                                  state={props.state.profilePage}/>} />
+                               <Route exact path="/dialogs" element={<Dialogs
+                                   state={props.state.dialogsPage}/>} />
                          </Routes>
                    </div>
                    <Footer />

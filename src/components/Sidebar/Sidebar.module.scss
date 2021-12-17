@@ -1,9 +1,10 @@
  aside {
    display: flex;
-   justify-content: center;
-   align-self: flex-start;
+   flex-direction: column;
    background-color: black;
    width: 100%;
+   height: min-content;
+   padding: 15px;
    .item {
      list-style-type: none;
      &:not(:last-child) {
@@ -11,9 +12,24 @@
      }
    }
    .nav {
+     display: flex;
+     justify-content: center;
      grid-area: nav;
      background: black;
      color: antiquewhite;
+     padding: 0px 0 15px 0;
+   }
+   .friends {
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+     color: #ffffff;
+     text-align: center;
+     .avatar {
+       width: 50px;
+       border-radius: 15px;
+     }
+
    }
  }
 

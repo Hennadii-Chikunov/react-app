@@ -5,7 +5,7 @@ const MyPosts = (props) => {
 
         // метод array.map
      let postElements =
-         props.postsData.map( p =>  <Post message={p.message} likes={p.likesCount}/>);
+         props.postsData.map( p =>  <Post message={p.message} likes={p.likesCount} key={p.id}/>);
     return (
           <article>
               <textarea className={styles.textarea} name="" id="" cols="30" rows="10">
