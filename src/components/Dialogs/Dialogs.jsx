@@ -7,9 +7,8 @@ import {DialogItem} from "./DialogItem";
 
 const Dialogs = (props) => {
 
-    let messagesElements = props.messagesData.map( message => <Message message={message.message} /> );
-    let dialogsElements = props.dialogsData.map( dialog => <DialogItem name={dialog.name} id={dialog.id} /> );
-
+    let messagesElements = props.state.messagesData.map( message => <Message message={message.message} key={message.id}/> );
+    let dialogsElements = props.state.dialogsData.map( dialog => <DialogItem name={dialog.name} key={dialog.id} /> );
 
     return (
         <section className={styles.dialogs}>
