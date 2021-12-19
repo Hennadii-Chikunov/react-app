@@ -1,0 +1,21 @@
+ aside {
+   .item {
+     list-style-type: none;
+
+     &:not(:last-child) {
+       padding-bottom: 10px;
+     }
+   }
+
+   .nav {
+     display: flex;
+     justify-content: center;
+     grid-area: nav;
+     background: black;
+     color: antiquewhite;
+     padding: 0 0 15px 0;
+   }
+ }
+
+
+
