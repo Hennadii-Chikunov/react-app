@@ -6,7 +6,6 @@ import { Profile } from "../Profile/Profile";
 import { Footer } from "../Footer/Footer";
 import { Dialogs } from "../Dialogs";
 import {
-    BrowserRouter,
     Routes,
     Route
 } from "react-router-dom";
@@ -14,10 +13,9 @@ import {
 const App = (props) => {
 
    return (
-      <BrowserRouter>
                <div className="wrapper">
                    <Header />
-                   <Sidebar />
+                   <Sidebar state={props.state.sidebarPage}/>
                    <div className='wrapper__content'>
 						 <Routes>
 			                  <Route exact path="/profile" element={<Profile
@@ -28,7 +26,6 @@ const App = (props) => {
                    </div>
                    <Footer />
                </div>
-      </BrowserRouter>
    );
 }
 

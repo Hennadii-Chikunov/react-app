@@ -1,37 +1,13 @@
-import styles from './Sidebar.module.scss';
-import { NavLink } from "react-router-dom";
-import avatar from './../../img/avatar.jpg';
+import {FriendsBlock} from "./FriendsBlock";
+import {SideNav} from "./SideNav";
+import React from "react";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
 
     return (
            <aside>
-                   <nav className={styles.nav}>
-                       <ul>
-                           <li className={styles.item}>
-                               <NavLink to='/profile'>Profile</NavLink>
-                           </li>
-                           <li className={styles.item}>
-                               <NavLink to='/dialogs'>Dialogs</NavLink>
-                           </li>
-                           <li className={styles.item}>SAAS</li>
-                           <li className={styles.item}>HTML5</li>
-                       </ul>
-                   </nav>
-                   <div className={styles.friends}>
-                          <figure>
-                              <img className={styles.avatar} src={ avatar } alt="Avatar"/>
-                              <figcaption>Gera</figcaption>
-                          </figure>
-                       <figure>
-                           <img className={styles.avatar} src={ avatar } alt="Avatar"/>
-                           <figcaption>Volt</figcaption>
-                       </figure>
-                       <figure>
-                           <img className={styles.avatar} src={ avatar } alt="Avatar"/>
-                           <figcaption>Ell</figcaption>
-                       </figure>
-                   </div>
+                  <SideNav />
+                  <FriendsBlock sideFriendsData={props.state.sideFriendsData}/>
            </aside>
         );
 }

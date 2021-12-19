@@ -1,0 +1,22 @@
+ aside {
+   display: flex;
+   flex-direction: column;
+   background-color: black;
+   width: 100%;
+   height: min-content;
+   padding: 15px;
+   .friends {
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+     color: #ffffff;
+     text-align: center;
+     .avatar {
+       width: 50px;
+       border-radius: 15px;
+     }
+
+   }
+ }
+
+
