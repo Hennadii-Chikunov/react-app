@@ -1,4 +1,6 @@
 // данные с сервера
+import {rerenderEntireTree} from "../render";
+
 let state = {
     profilePage: {
         postsData: [
@@ -34,5 +36,15 @@ let state = {
             {id:3, name: 'Ell'}
         ]
     }
+}
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likesCount: 0
+    };
+
+    state.profilePage.postsData.push(newPost);
+    rerenderEntireTree(state);
 }
 export { state };

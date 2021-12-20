@@ -7,7 +7,7 @@ const Profile = (props) => {
           <section>
               <h2 className={styles.title}>Page of my start REACT project</h2>
               <ProfileInfo/>
-              <MyPosts postsData={props.state.postsData}/>
+              <MyPosts postsData={props.state.postsData} addPost={props.addPost}/>
           </section>
     );
 }
