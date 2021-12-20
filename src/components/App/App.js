@@ -18,8 +18,10 @@ const App = (props) => {
                    <Sidebar state={props.state.sidebarPage}/>
                    <div className='wrapper__content'>
 						 <Routes>
-			                  <Route exact path="/profile" element={<Profile
-                                  state={props.state.profilePage}/>} />
+			                  <Route exact path="/profile" element={
+                                  <Profile state={props.state.profilePage}
+                                           addPost={props.addPost}
+                                  />} />
                                <Route exact path="/dialogs" element={<Dialogs
                                    state={props.state.dialogsPage}/>} />
                          </Routes>
