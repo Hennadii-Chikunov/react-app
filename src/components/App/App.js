@@ -9,6 +9,7 @@ import {
     Routes,
     Route
 } from "react-router-dom";
+import {updateNewPostText} from "../../Redux/state";
 
 const App = (props) => {
 
@@ -19,8 +20,9 @@ const App = (props) => {
                    <div className='wrapper__content'>
 						 <Routes>
 			                  <Route exact path="/profile" element={
-                                  <Profile state={props.state.profilePage}
+                                  <Profile profilePage={props.state.profilePage}
                                            addPost={props.addPost}
+                                           updateNewPostText={props.updateNewPostText}
                                   />} />
                                <Route exact path="/dialogs" element={<Dialogs
                                    state={props.state.dialogsPage}/>} />
