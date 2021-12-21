@@ -1,6 +1,36 @@
 article {
     display: block;
+    margin: 15px;
+    .title {
+        font-size: 18px;
+        color: white;
+        padding: 0 0 10px 0;
+        text-align: center;
+    }
     .textarea {
+        margin: 0 10px 0 0;
+        padding: 5px 0 0 15px;
+        resize: none;
+        border-radius: 10px;
+        font-size: 12px;
+    }
+    .btn {
+        cursor: pointer;
+        width: 100px;
+        max-width: 100%;
         height: 30px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 2px darkgreen;
+        border-radius: 10px;
+        background-color: transparent;
+        color: gold;
+        line-height: 150%;
+        font-size: 15px;
+        transition: border 0.3s;
+        &:hover {
+            border: solid 2px white;
+        }
     }
 }

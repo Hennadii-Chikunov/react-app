@@ -11,14 +11,19 @@ const MyPosts = (props) => {
 
     let newPostElement = React.createRef();
     let addPost = () => {
+        props.addPost();
+    }
+
+    let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.addPost(text);
+        props.updateNewPostText(text);
     }
     return (
           <article>
-              <textarea ref={newPostElement}  className={styles.textarea} name="" id="" cols="30" rows="10">
+              <h3 className={styles.title}>Клик по кнопке AddPost добавляет new POST на страницу(удаляется через reload page)</h3>
+              <textarea onChange={onPostChange} ref={newPostElement}  className={styles.textarea} value={props.newPostText} cols="30" rows="2">
               </textarea>
-             <button onClick={addPost}>Add post</button>
+             <button className={styles.btn} onClick={addPost}>Add post</button>
               { postElements }
           </article>
     );

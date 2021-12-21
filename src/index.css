@@ -5,11 +5,14 @@
   box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: cursive;
 }
 .active {
   color: gold;
+}
+
+button {
+  display: inline-block;;
 }
 
