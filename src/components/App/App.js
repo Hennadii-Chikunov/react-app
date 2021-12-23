@@ -1,18 +1,16 @@
 import React from 'react';
 import "./App.scss";
-import { Header } from "../Header/Header";
-import { Sidebar } from "../Sidebar/Sidebar";
-import { Profile } from "../Profile/Profile";
-import { Footer } from "../Footer/Footer";
+import { Header } from "../Header";
+import { Sidebar } from "../Sidebar";
+import { Profile } from "../Profile";
+import { Footer } from "../Footer";
 import { Dialogs } from "../Dialogs";
 import {
     Routes,
     Route
 } from "react-router-dom";
-import {updateNewPostText} from "../../Redux/state";
 
 const App = (props) => {
-
    return (
                <div className="wrapper">
                    <Header />
