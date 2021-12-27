@@ -1,32 +1,35 @@
 import styles from "./MyPosts.module.scss";
 /*import { Button } from "../../Button";*/
-import { Post } from "./Post";
+import {Post} from "./Post";
 import React from "react";
+
 const MyPosts = (props) => {
-        // метод array.map
-     let postElements =
-         props.postsData.map( p =>  (
-             <Post message={p.message} likes={p.likesCount} key={p.id}/>
-         ));
+    // метод array.map
+    let postElements =
+        props.postsData.map(p => (
+            <Post message={p.message} likes={p.likesCount} key={p.id}/>
+        ));
 
     let newPostElement = React.createRef();
     let addPost = () => {
-        props.addPost();
+        props.dispatch({type: 'ADD-POST'});
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
     }
     return (
-          <article>
-              <h3 className={styles.title}>Клик по кнопке AddPost добавляет new POST на страницу(удаляется через reload page)</h3>
-              <textarea onChange={onPostChange} ref={newPostElement}  className={styles.textarea} value={props.newPostText} cols="30" rows="2">
+        <article>
+            <h3 className={styles.title}>Клик по кнопке AddPost добавляет new POST на страницу(удаляется через reload
+                page)</h3>
+            <textarea onChange={onPostChange} ref={newPostElement} className={styles.textarea} value={props.newPostText}
+                      cols="30" rows="2">
               </textarea>
-             <button className={styles.btn} onClick={addPost}>Add post</button>
-              { postElements }
-          </article>
+            <button className={styles.btn} onClick={addPost}>Add post</button>
+            {postElements}
+        </article>
     );
 }
 
-export { MyPosts };
+export {MyPosts};
