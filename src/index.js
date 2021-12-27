@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { store } from './Redux';
+import {store} from './Redux';
 import './index.css';
 import App from './components/App/App';
 import {BrowserRouter} from "react-router-dom";
@@ -10,8 +10,7 @@ let rerenderEntireTree = (state) => {
         <React.StrictMode>
             <BrowserRouter>
                 <App state={state}
-                     addPost={store.addPost.bind(store)}
-                     updateNewPostText={store.updateNewPostText.bind(store)}/>
+                     dispatch={store.dispatch.bind(store)}/>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
