@@ -1,0 +1,11 @@
+.area {
+  padding: 5px 0 0 15px;
+  resize: none;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-top: -8px;
+
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
+}

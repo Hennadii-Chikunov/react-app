@@ -6,9 +6,9 @@ const DialogItem = (props) => {
 
     return (
         <div className={styles.item}>
-            <NavLink to={ path }>{props.name}</NavLink>
-            </div>
+            <NavLink to={path}>{props.name}</NavLink>
+        </div>
     )
 }
 
-export { DialogItem };
+export {DialogItem};

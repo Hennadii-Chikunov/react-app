@@ -1,0 +1,16 @@
+.item {
+  color: gold;
+  line-height: 150%;
+
+  &:not(:last-child) {
+    padding-bottom: 20px;
+  }
+
+  .text {
+    text-align: center;
+    background-color: green;
+    max-width: max-content;
+    border-radius: 10px;
+    padding: 6px;
+  }
+}

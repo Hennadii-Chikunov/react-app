@@ -3,17 +3,21 @@
   display: flex;
   gap: 30px;
   padding: 30px;
+
   .dialogs-items {
     display: flex;
     flex-direction: column;
   }
+
   .item {
     color: green;
     cursor: pointer;
     line-height: 150%;
+
     &:not(:last-child) {
-      padding-bottom: 10px;
+      padding-bottom: 40px;
     }
+
     &.active {
       border: solid 2px goldenrod;
       display: flex;
@@ -22,13 +26,20 @@
     }
 
   }
+
   .messages {
     display: flex;
     flex-direction: column;
-    .message {
-      &:not(:last-child) {
-        padding-bottom: 20px;
-      }
-    }
+  }
+
+  .btn {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .area {
+    display: flex;
+    flex-direction: column;
   }
 }
