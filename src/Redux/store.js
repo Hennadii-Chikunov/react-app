@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 let store = {  // store - OOP
     // все что с нижним подчеркиванием это приватные методы
     _state: {
@@ -20,7 +23,17 @@ let store = {  // store - OOP
             messagesData: [
                 {id: 1, message: 'Hi, Gera'},
                 {id: 2, message: "What's up"},
-                {id: 3, message: "Good, i crazy love strawberry"}
+                {id: 3, message: "Good, i crazy love strawberry"},
+                {id: 4, message: "Yeah"},
+                {id: 5, message: "Its Perfect"},
+
+            ],
+            textBtnData: [
+                {id: 1, textBtn: 'Click me'},
+                {id: 2, textBtn: 'Click me'},
+                {id: 3, textBtn: 'Click me'},
+                {id: 4, textBtn: 'Click me'},
+                {id: 5, textBtn: 'Click me'}
             ]
         },
         sidebarPage: {
@@ -49,7 +62,7 @@ let store = {  // store - OOP
     },
     // action это обьект , у него должен быть обязательно type: 'ADD-POST'
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             let newPost = {
                 id: 5,
                 message: this._state.profilePage.newPostText,
@@ -58,12 +71,15 @@ let store = {  // store - OOP
             this._state.profilePage.postsData.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state)
         }
     }
 }
+export const addPostActionCreator = () => ({type: ADD_POST});
+export const UpdateNewPostTextActionCreator = (text) =>
+    ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
 export {store};
 window.store = store;
