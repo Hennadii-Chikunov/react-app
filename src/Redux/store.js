@@ -1,5 +1,8 @@
+// CONST НУЖНЫ ЧТОБЫ НЕ ИСПОЛЬЗОВАТЬ СТРОКИ, УМЕНШИТЬ ВЕРОЯТНОСТЬ ОШИБИТСЯ
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {  // store - OOP
     // все что с нижним подчеркиванием это приватные методы
@@ -28,13 +31,7 @@ let store = {  // store - OOP
                 {id: 5, message: "Its Perfect"},
 
             ],
-            textBtnData: [
-                {id: 1, textBtn: 'Click me'},
-                {id: 2, textBtn: 'Click me'},
-                {id: 3, textBtn: 'Click me'},
-                {id: 4, textBtn: 'Click me'},
-                {id: 5, textBtn: 'Click me'}
-            ]
+            newMessageBody: ''
         },
         sidebarPage: {
             sideNavData: [
@@ -74,12 +71,24 @@ let store = {  // store - OOP
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state)
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.body;
+            this._callSubscriber(this._state) // отвечает за перериросвку всей страницы
+        } else if (action.type === SEND_MESSAGE) {
+            let body = this._state.dialogsPage.newMessageBody;
+            this._state.dialogsPage.newMessageBody = '';
+            this._state.dialogsPage.messagesData.push({id: 6, message: body});
+            this._callSubscriber(this._state) // отвечает за перериросвку всей страницы
         }
     }
 }
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const UpdateNewPostTextActionCreator = (text) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text});
+
+export const sendMessageCreator = () => ({type: SEND_MESSAGE});
+export const updateNewMessageBodyCreator = (body) =>
+    ({type: UPDATE_NEW_MESSAGE_BODY, body: body});
 
 export {store};
 window.store = store;
