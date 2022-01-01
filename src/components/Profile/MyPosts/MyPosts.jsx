@@ -2,7 +2,7 @@ import styles from "./MyPosts.module.scss";
 /*import { Button } from "../../Button";*/
 import {Post} from "./Post";
 import React from "react";
-import {addPostActionCreator, UpdateNewPostTextActionCreator} from "../../../Redux/store";
+import {addPostActionCreator, UpdateNewPostTextActionCreator} from "./../../../Redux/Reducers/profile-reducer";
 
 const MyPosts = (props) => {
     // метод array.map
