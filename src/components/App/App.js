@@ -4,7 +4,7 @@ import {Header} from "../Header";
 import {Sidebar} from "../Sidebar";
 import {Profile} from "../Profile";
 import {Footer} from "../Footer";
-import {Dialogs} from "../Dialogs";
+import {DialogsContainer} from "../Dialogs/DialogsContainer";
 import {
     Routes,
     Route
@@ -18,10 +18,9 @@ const App = (props) => {
             <div className='wrapper__content'>
                 <Routes>
                     <Route exact path="/profile" element={
-                        <Profile profilePage={props.state.profilePage}
-                                 dispatch={props.dispatch}/>
+                        <Profile store={props.store}/>
                     }/>
-                    <Route exact path="/dialogs" element={<Dialogs
+                    <Route exact path="/dialogs" element={<DialogsContainer
                         store={props.store}/>}/>
                 </Routes>
             </div>

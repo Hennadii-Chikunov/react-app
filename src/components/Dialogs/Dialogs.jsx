@@ -1,26 +1,25 @@
-import styles from "./Dialogs.module.scss";
-
-import React from "react";
-
+import styles from "../Dialogs/Dialogs.module.scss";
 import {Message} from "./Message";
 import {DialogItem} from "./DialogItem";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../Redux/Reducers/dialogs-reducer";
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState().dialogsPage;
+    let state = props.dialogsPage;
 
-    let messagesElements = state.messagesData.map(message => <Message message={message.message}
-                                                                      key={message.id}/>);
-    let dialogsElements = state.dialogsData.map(dialog => <DialogItem name={dialog.name} key={dialog.id}/>);
+    let messagesElements = state.messagesData.map(message =>
+        <Message message={message.message}
+                 key={message.id}/>);
+    let dialogsElements = state.dialogsData.map(dialog =>
+        <DialogItem name={dialog.name} key={dialog.id}/>);
     let newMessageBody = state.newMessageBody;
 
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator());
+        props.sendMessage();
     }
+
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.store.dispatch(updateNewMessageBodyCreator(body));
+        props.updateNewMessageBody(body);
     }
     return (
         <section className={styles.dialogs}>
@@ -31,11 +30,12 @@ const Dialogs = (props) => {
                 <div>{messagesElements}</div>
                 <div>
                     <div>
-                        <textarea value={newMessageBody} onChange={onNewMessageChange} placeholder='Enter your message'
-                                  name="" id=""
-                                  cols="30"
-                                  rows="10">
-                        </textarea>
+                                <textarea value={newMessageBody} onChange={onNewMessageChange}
+                                          placeholder='Enter your message'
+                                          name="" id=""
+                                          cols="30"
+                                          rows="10">
+                                </textarea>
                     </div>
                     <div>
                         <button onClick={onSendMessageClick}>Send</button>
@@ -43,6 +43,6 @@ const Dialogs = (props) => {
                 </div>
             </div>
         </section>
-    );
+    )
 }
 export {Dialogs};
