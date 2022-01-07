@@ -1,14 +1,16 @@
-import styles from './FriendsBlock.module.scss';
+import styles from "./FriendsBlock.module.scss";
 import {AvatarIcon} from "./AvatarIcon";
 
 const FriendsBlock = (props) => {
+    let state = props.sidebarPage;
     let friendsElements =
-        props.sideFriendsData.map( nav =>  <AvatarIcon name={nav.name} key={nav.id} />);
+        state.sideFriendsData.map(nav =>
+            <AvatarIcon name={nav.name} key={nav.id}/>);
     return (
-                   <div className={styles.friends}>
-                       { friendsElements }
-                   </div>
-        );
+        <div className={styles.friends}>
+            {friendsElements}
+        </div>
+    )
 }
 
-export { FriendsBlock };
+export {FriendsBlock};

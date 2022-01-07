@@ -1,15 +1,14 @@
-import {FriendsBlock} from "./FriendsBlock";
 import {SideNav} from "./SideNav";
 import React from "react";
+import {FriendsBlockContainer} from "./FriendsBlockContainer";
 
 const Sidebar = (props) => {
-
     return (
-           <aside>
-                  <SideNav />
-                  <FriendsBlock sideFriendsData={props.state.sideFriendsData}/>
-           </aside>
-        );
+        <aside>
+            <SideNav/>
+            <FriendsBlockContainer/>
+        </aside>
+    );
 }
 
-export { Sidebar };
+export {Sidebar};
