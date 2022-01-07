@@ -4,7 +4,8 @@ import {store} from './Redux/redux-store';
 import './index.css';
 import App from './components/App/App';
 import {BrowserRouter} from "react-router-dom";
-import {Provider} from "./StoreContext/StoreContext";
+import {Provider} from "react-redux";
+
 
 let rerenderEntireTree = () => {
     ReactDOM.render(
