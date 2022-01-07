@@ -10,18 +10,17 @@ import {
     Route
 } from "react-router-dom";
 // props это обьект который передает какие то данные !!!
-const App = (props) => {
+const App = () => {
     return (
         <div className="wrapper">
             <Header/>
-            <Sidebar state={props.state.sidebarPage}/>
+            <Sidebar/>
             <div className='wrapper__content'>
                 <Routes>
                     <Route exact path="/profile" element={
-                        <Profile store={props.store}/>
+                        <Profile/>
                     }/>
-                    <Route exact path="/dialogs" element={<DialogsContainer
-                        store={props.store}/>}/>
+                    <Route exact path="/dialogs" element={<DialogsContainer/>}/>
                 </Routes>
             </div>
             <Footer/>

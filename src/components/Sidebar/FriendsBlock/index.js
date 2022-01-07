@@ -1,1 +1,1 @@
-export { FriendsBlock } from './FriendsBlock';
+export {FriendsBlock} from './FriendsBlock';
