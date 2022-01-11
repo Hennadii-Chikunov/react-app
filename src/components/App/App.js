@@ -9,7 +9,8 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-// props это обьект который передает какие то данные !!!
+import {UsersContainer} from "../Users/UsersContainer/UsersContainer";
+
 const App = () => {
     return (
         <div className="wrapper">
@@ -21,6 +22,7 @@ const App = () => {
                         <Profile/>
                     }/>
                     <Route exact path="/dialogs" element={<DialogsContainer/>}/>
+                    <Route exact path='/users' element={<UsersContainer/>}/>
                 </Routes>
             </div>
             <Footer/>
