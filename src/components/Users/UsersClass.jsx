@@ -6,9 +6,7 @@ import ava from './../../img/ava-user.jpg';
 
 class UsersClass extends React.Component {
 
-    constructor(props) {
-        super(props);
-
+    componentDidMount() {
         axios.get("https://social-network.samuraijs.com/api/1.0/users")
             .then(response => {
                 this.props.setUsers(response.data.items);
