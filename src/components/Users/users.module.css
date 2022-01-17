@@ -7,3 +7,28 @@
     width: 100px;
     border-radius: 50%;
 }
+
+.boxNumbers {
+    text-align: center;
+}
+
+button {
+    background: transparent;
+    color: azure;
+    border: 1px solid green;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+span {
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
+}
+
+.selectedNumber {
+    font-size: 23px;
+    font-weight: 900;
+    color: pink;
+    display: inline-block;
+}
