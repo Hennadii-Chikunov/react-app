@@ -1,1 +1,1 @@
-export {UsersClass} from './UsersClass';
+export {Users} from './Users';
