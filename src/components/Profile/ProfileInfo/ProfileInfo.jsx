@@ -1,13 +1,32 @@
 import styles from "./ProfileInfo.module.scss";
 import image from "../../../img/scene-two.jpg";
-const ProfileInfo = () => {
+import {Preloader} from "../../common/Preloader";
+
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Preloader/>
+    }
     return (
         <div>
             <picture>
-                <img className={styles.img} src={ image } alt="image"/>
+                <img className={styles.img} src={image} alt="image"/>
             </picture>
+            <div>
+                <h3>
+                    {props.profile.aboutMe}
+                </h3>
+                <figure>
+                    <img src={props.profile.photos.small} alt="profile"/>
+                    <figcaption>{props.profile.lookingForAJobDescription}</figcaption>
+                </figure>
+                <div>
+                    <span>{props.profile.contacts.facebook}</span>
+                    <span>{props.profile.contacts.github}</span>
+                    <span>{props.profile.contacts.instagram}</span>
+                </div>
+            </div>
         </div>
     );
 }
 
-export { ProfileInfo };
+export {ProfileInfo};

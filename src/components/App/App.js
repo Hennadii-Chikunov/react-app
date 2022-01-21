@@ -2,7 +2,6 @@ import React from 'react';
 import "./App.scss";
 import {Header} from "../Header";
 import {Sidebar} from "../Sidebar";
-import {Profile} from "../Profile";
 import {Footer} from "../Footer";
 import {DialogsContainer} from "../Dialogs/DialogsContainer";
 import {
@@ -10,6 +9,7 @@ import {
     Route
 } from "react-router-dom";
 import {UsersContainer} from "../Users/UsersContainer/UsersContainer";
+import ProfileContainer from './../Profile/ProfileContainer/ProfileContainer';
 
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
             <div className='wrapper__content'>
                 <Routes>
                     <Route exact path="/profile" element={
-                        <Profile/>
+                        <ProfileContainer/>
                     }/>
                     <Route exact path="/dialogs" element={<DialogsContainer/>}/>
                     <Route exact path='/users' element={<UsersContainer/>}/>
