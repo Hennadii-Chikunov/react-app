@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'SET-USER-PROFILE';
 
 let initialState = {
     postsData: [
@@ -7,7 +8,8 @@ let initialState = {
         {id: 2, message: "Good and You ?", likesCount: 31},
         {id: 3, message: "You are Best of the Best ?", likesCount: 1}
     ],
-    newPostText: 'you can get this job'
+    newPostText: 'you can get this job',
+    profile: null
 };
 
 const profileReducer =
@@ -32,12 +34,16 @@ const profileReducer =
                     newPostText: action.newText
                 };
             }
+            case SET_USER_PROFILE: {
+                return {...state, profile: action.profile}
+            }
             default:
                 return state;
         }
     }
 
 export const addPostActionCreator = () => ({type: ADD_POST});
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const UpdateNewPostTextActionCreator = (text) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text});
 

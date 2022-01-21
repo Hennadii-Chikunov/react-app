@@ -1,6 +1,7 @@
 import styles from "./users.module.css";
 import ava from "../../img/ava-user.jpg";
 import React from "react";
+import {NavLink} from "react-router-dom";
 
 const Users = (props) => {
 
@@ -28,9 +29,11 @@ const Users = (props) => {
                     props.users.map(u => <div key={u.id}>
                 <span>
                     <div>
-                        <img src={u.photos.small != null ? u.photos.small : ava} className={styles.userPhoto}/>
-                    </div>
-                    <div>
+                        <NavLink to={'/profile/' + u.id}>
+                            <img src={u.photos.small != null ? u.photos.small : ava} className={styles.userPhoto}/>
+                            </NavLink>
+                            </div>
+                            <div>
                         {u.followed
                             ? <button onClick={() => {
                                 props.unfollow(u.id)
@@ -39,18 +42,18 @@ const Users = (props) => {
                                 props.follow(u.id)
                             }}>Follow</button>}
 
-                    </div>
-                </span>
+                            </div>
+                            </span>
                         <span>
-                     <span>
-                        <div>{u.name}</div>
-                        <div>{u.status}</div>
-                    </span>
-                    <span>
-                        <div>{"u.location.country"}</div>
-                        <div>{"u.location.city"}</div>
-                    </span>
-                </span>
+                            <span>
+                            <div>{u.name}</div>
+                            <div>{u.status}</div>
+                            </span>
+                            <span>
+                            <div>{"u.location.country"}</div>
+                            <div>{"u.location.city"}</div>
+                            </span>
+                            </span>
                     </div>)
                 }
             </div>
