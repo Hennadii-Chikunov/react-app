@@ -1,6 +1,5 @@
 import React from 'react';
 import "./App.scss";
-import {Header} from "../Header";
 import {Sidebar} from "../Sidebar";
 import {Footer} from "../Footer";
 import {DialogsContainer} from "../Dialogs/DialogsContainer";
@@ -9,12 +8,13 @@ import {
 } from "react-router-dom";
 import {UsersContainer} from "./../Users/UsersContainer/UsersContainer";
 import ProfileContainer from './../Profile/ProfileContainer/ProfileContainer';
+import HeaderContainer from "./../Header/HeaderContainer";
 
 
 const App = () => {
     return (
         <div className="wrapper">
-            <Header/>
+            <HeaderContainer/>
             <Sidebar/>
             <div className='wrapper__content'>
                 <Route exact path="/profile/:userId?" component={ProfileContainer}/>
