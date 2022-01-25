@@ -2,6 +2,7 @@ import styles from "./users.module.css";
 import ava from "../../img/ava-user.jpg";
 import React from "react";
 import {NavLink} from "react-router-dom";
+import * as axios from "axios";
 
 const Users = (props) => {
 
@@ -36,10 +37,30 @@ const Users = (props) => {
                             <div>
                         {u.followed
                             ? <button onClick={() => {
-                                props.unfollow(u.id)
+                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                                    withCredentials: true,
+                                    headers: {
+                                        "API-KEY": "e66b7458-f633-49b7-a330-d43ad52f2e1d"
+                                    }
+                                })
+                                    .then(response => {
+                                        if (response.data.resultCode == 0) {
+                                            props.unfollow(u.id)
+                                        }
+                                    });
                             }}>Unfollow</button>
                             : <button onClick={() => {
-                                props.follow(u.id)
+                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                    withCredentials: true,
+                                    headers: {
+                                        "API-KEY": "e66b7458-f633-49b7-a330-d43ad52f2e1d"
+                                    }
+                                })
+                                    .then(response => {
+                                        if (response.data.resultCode == 0) {
+                                            props.follow(u.id)
+                                        }
+                                    });
                             }}>Follow</button>}
 
                             </div>
