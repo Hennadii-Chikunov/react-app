@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import {userProfile} from "../Redux/Reducers/profile-reducer";
 
 export const instance = axios.create({
     withCredentials: true,
@@ -17,6 +18,9 @@ export const usersAPI = {
     },
     authMe() {
         return instance.get(`auth/me`)
+    },
+    userProfileApi(userId) {
+        return instance.get(`profile/${userId}`)
     },
     follow(userId) {
         return instance.post(`follow/${userId}`)
