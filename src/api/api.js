@@ -1,5 +1,4 @@
 import * as axios from "axios";
-import {userProfile} from "../Redux/Reducers/profile-reducer";
 
 export const instance = axios.create({
     withCredentials: true,

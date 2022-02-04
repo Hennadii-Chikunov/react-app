@@ -49,7 +49,7 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const UpdateNewPostTextActionCreator = (text) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
-export const userProfile = (userId) => {
+export const getUserProfile = (userId) => {
     return (dispatch) => {
         usersAPI.userProfileApi(userId)
             .then(response => {

@@ -9,6 +9,7 @@ import {
 import {UsersContainer} from "./../Users/UsersContainer/UsersContainer";
 import ProfileContainer from './../Profile/ProfileContainer/ProfileContainer';
 import HeaderContainer from "./../Header/HeaderContainer";
+import {Login} from "../Login";
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
                 <Route exact path="/profile/:userId?" component={ProfileContainer}/>
                 <Route exact path="/dialogs" component={DialogsContainer}/>
                 <Route exact path='/users' component={UsersContainer}/>
+                <Route exact path='/login' component={Login}/>
             </div>
             <Footer/>
         </div>

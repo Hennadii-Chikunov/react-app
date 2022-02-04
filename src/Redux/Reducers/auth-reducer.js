@@ -1,4 +1,4 @@
-import {instance, usersAPI} from "../../api/api";
+import {usersAPI} from "../../api/api";
 
 const SET_USER_DATA = 'SET_USER_DATA';
 
@@ -23,7 +23,7 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const auth = () => {
+export const getAuthUserData = () => {
     return (dispatch) => {
         usersAPI.authMe()
             .then(response => {
