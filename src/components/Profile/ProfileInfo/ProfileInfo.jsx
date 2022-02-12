@@ -1,6 +1,7 @@
 import styles from "./ProfileInfo.module.scss";
 import image from "../../../img/scene-two.jpg";
 import {Preloader} from "../../common/Preloader";
+import {ProfileStatus} from "../ProfileStatus";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -12,6 +13,7 @@ const ProfileInfo = (props) => {
                 <img className={styles.img} src={image} alt="image"/>
             </picture>
             <div>
+                <ProfileStatus status={'Hello React friends'}/>
                 <h3>
                     {props.profile.aboutMe}
                 </h3>
