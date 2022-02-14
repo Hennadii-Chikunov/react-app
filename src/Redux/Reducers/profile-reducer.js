@@ -1,8 +1,9 @@
-import {instance, usersAPI} from "../../api/api";
+import {instance, ProfileAPI, usersAPI} from "../../api/api";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
+const SET_STATUS = 'SET-STATUS';
 
 let initialState = {
     postsData: [
@@ -11,7 +12,8 @@ let initialState = {
         {id: 3, message: "You are Best of the Best ?", likesCount: 1}
     ],
     newPostText: 'you can get this job',
-    profile: null
+    profile: null,
+    status: ''
 };
 
 const profileReducer =
@@ -39,6 +41,9 @@ const profileReducer =
             case SET_USER_PROFILE: {
                 return {...state, profile: action.profile}
             }
+            case SET_STATUS: {
+                return {...state, status: action.status}
+            }
             default:
                 return state;
         }
@@ -46,14 +51,33 @@ const profileReducer =
 
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
+export const setStatus = (status) => ({type: SET_STATUS, status});
 export const UpdateNewPostTextActionCreator = (text) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
 export const getUserProfile = (userId) => {
     return (dispatch) => {
-        usersAPI.userProfileApi(userId)
+        ProfileAPI.userProfileApi(userId)
             .then(response => {
                 dispatch(setUserProfile(response.data));
+            });
+    }
+}
+export const getStatus = (userId) => {
+    return (dispatch) => {
+        ProfileAPI.getStatus(userId)
+            .then(response => {
+                dispatch(setStatus(response.data));
+            });
+    }
+}
+export const updateStatus = (status) => {
+    return (dispatch) => {
+        ProfileAPI.updateStatus(status)
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    dispatch(setStatus(status));
+                }
             });
     }
 }

@@ -15,16 +15,26 @@ export const usersAPI = {
                 return response.data;
             });
     },
-    authMe() {
-        return instance.get(`auth/me`)
-    },
-    userProfileApi(userId) {
-        return instance.get(`profile/${userId}`)
-    },
     follow(userId) {
         return instance.post(`follow/${userId}`)
     },
     unfollow(userId) {
         return instance.delete(`follow/${userId}`)
+    }
+}
+export const ProfileAPI = {
+    userProfileApi(userId) {
+        return instance.get(`profile/${userId}`)
+    },
+    getStatus(userId) {
+        return instance.get(`profile/status/${userId}`);
+    },
+    updateStatus(status) {
+        return instance.put(`profile/status`, {status: status});
+    }
+}
+export const AuthAPI = {
+    authMe() {
+        return instance.get(`auth/me`)
     }
 }
