@@ -1,0 +1,16 @@
+.input {
+  padding: 10px 15px 10px 10px;
+
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.wrap__input {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

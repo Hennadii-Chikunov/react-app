@@ -1,8 +1,12 @@
+import {LoginReduxForm} from "../LoginForm/LoginForm";
+
 const Login = () => {
+    const onSubmit = (formData) => {
+        console.log(formData)
+    }
     return (
         <div>
-            <h3>Привет пользователь!</h3>
-            <p>Залогинься</p>
+            <LoginReduxForm onSubmit={onSubmit}/>
         </div>
     )
 }
