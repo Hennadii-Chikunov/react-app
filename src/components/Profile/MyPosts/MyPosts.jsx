@@ -1,23 +1,15 @@
 import styles from "./MyPosts.module.scss";
 import {Post} from "./Post";
 import React from "react";
+import {AddPostReduxForm} from "./AddPostForm/AddPostForm";
 
 const MyPosts = (props) => {
-    // метод array.map
     let postElements =
         props.postsData.map(p => (
             <Post message={p.message} likes={p.likesCount} key={p.id}/>
         ));
-
-    let newPostElement = React.createRef();
-
-    let onAddPost = () => {
-        props.addPost();
-    }
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+    let onAddPost = (values) => {
+        props.addPost(values.newPostText);
     }
     return (
         <article>
@@ -26,10 +18,7 @@ const MyPosts = (props) => {
                 добавляет new POST на страницу
                 (удаляется через reload page)
             </h3>
-            <textarea onChange={onPostChange} ref={newPostElement}
-                      className={styles.textarea} value={props.newPostText}>
-              </textarea>
-            <button className={styles.btn} onClick={onAddPost}>Add post</button>
+            <AddPostReduxForm onSubmit={onAddPost}/>
             {postElements}
         </article>
     );
