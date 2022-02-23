@@ -2,7 +2,6 @@ import styles from "./users.module.css";
 import ava from "../../img/ava-user.jpg";
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {instance, usersAPI} from "../../api/api";
 
 const Users = (props) => {
 
@@ -31,7 +30,9 @@ const Users = (props) => {
                 <span>
                     <div>
                         <NavLink to={'/profile/' + u.id}>
-                            <img src={u.photos.small != null ? u.photos.small : ava} className={styles.userPhoto}/>
+                            <img src={u.photos.small != null ? u.photos.small : ava}
+                                 alt={'ava'}
+                                 className={styles.userPhoto}/>
                             </NavLink>
                             </div>
                             <div>

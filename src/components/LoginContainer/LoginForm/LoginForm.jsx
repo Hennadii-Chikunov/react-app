@@ -1,9 +1,9 @@
 import {Field, reduxForm} from "redux-form";
-import {maxLengthCreator, required} from "../../Utils/Validators/Validators";
-import {ElementForm} from "../../hoc/ElementForm";
-import styles from '../Login/Login.module.scss';
+import {maxLengthCreator, required} from "../../../Utils/Validators/Validators";
+import {ElementForm} from "../../../hoc/ElementForm";
+import styles from '../Login.module.scss';
 
-const maxLength = maxLengthCreator(10);
+const maxLength = maxLengthCreator(30);
 const Input = ElementForm("input");
 const LoginForm = (props) => {
     return (
@@ -11,14 +11,15 @@ const LoginForm = (props) => {
             <fieldset>
                 <legend>Login Form</legend>
                 <div className={styles.wrap__input}>
-                    <Field name={'Login'} className={styles.input}
-                           placeholder={'Login'} component={Input}
+                    <Field name={'email'} className={styles.input}
+                           placeholder={'email'} component={Input}
                            validate={[required, maxLength]}
                     />
                 </div>
                 <div className={styles.wrap__input}>
-                    <Field name={'Password'} className={styles.input}
+                    <Field name={'password'} className={styles.input}
                            placeholder={'Password'} component={Input}
+                           type={'password'}
                            validate={[required, maxLength]}
                     />
                 </div>
