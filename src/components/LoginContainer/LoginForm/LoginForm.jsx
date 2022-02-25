@@ -30,6 +30,11 @@ const LoginForm = (props) => {
                         />
                         Remember me</label>
                 </div>
+                {props.error &&
+                    <div className={styles.formSummaryError}>
+                        {props.error}
+                    </div>
+                }
                 <div>
                     <button type={'submit'}>Login</button>
                 </div>
