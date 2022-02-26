@@ -23,16 +23,14 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const getAuthUserData = () => {
-    return (dispatch) => {
-        AuthAPI.authMe()
-            .then(response => {
-                if (response.data.resultCode === 0) {
-                    let {id, login, email} = response.data.data;
-                    dispatch(setAuthUserData(id, email, login, true));
-                }
-            });
-    }
+export const getAuthUserData = () => (dispatch) => {
+    return AuthAPI.authMe()
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                let {id, login, email} = response.data.data;
+                dispatch(setAuthUserData(id, email, login, true));
+            }
+        });
 }
 export const login = (email, password, rememberMe) => (dispatch) => {
     AuthAPI.login(email, password, rememberMe)
