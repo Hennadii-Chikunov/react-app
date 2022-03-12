@@ -1,7 +1,7 @@
 import styles from "./ProfileInfo.module.scss";
 import image from "../../../img/scene-two.jpg";
 import {Preloader} from "../../common/Preloader";
-import {ProfileStatus} from "../ProfileStatus";
+import {ProfileStatusWithHooks} from "../ProfileStatus";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -13,7 +13,7 @@ const ProfileInfo = (props) => {
                 <img className={styles.img} src={image} alt="image"/>
             </picture>
             <div>
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
                 <h3>
                     {props.profile.aboutMe}
                 </h3>
